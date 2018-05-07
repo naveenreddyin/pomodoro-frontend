@@ -4,7 +4,7 @@ var apiBaseUrlString = ''
 const path = window.location.origin
 // console.log(window.location)
 
-var urlFirstPart = "http://localhost:8000";
+var urlFirstPart = process.env.NODE_ENV === 'development' ? "http://localhost:8000" : "https://pomodorobackend.herokuapp.com";
 var urlSecondPart = "/api/";
 apiBaseUrlString = urlFirstPart+urlSecondPart;
 
