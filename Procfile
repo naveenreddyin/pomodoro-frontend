@@ -1,1 +1,1 @@
-web: yarn build && serve -s build
+web: bin/boot
