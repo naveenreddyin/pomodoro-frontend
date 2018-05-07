@@ -1,1 +1,1 @@
-web: yarn build && yarn start NODE_ENV=production
+web: yarn build && serve -s build
