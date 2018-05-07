@@ -60,7 +60,6 @@ export function * updateTaskDone(api, {taskId, done}){
 // this function will update pomodoro count once timer is finished for a task
 export function * updateTaskPomodoroCount(api, {taskId, count}){
     const response = yield call(api.updateTaskPomodoroCount, taskId, count)
-    console.log(response)
     // fetch tasks again
     yield put(TaskActions.fetchTasks())
 }

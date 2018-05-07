@@ -69,7 +69,6 @@ export class TaskCard extends Component{
     render(){
         let {item, showStop} = this.state
         let created = Moment(item.created).format("Do MMM YYYY")
-        console.log(showStop)
         return (
             <Card className="task-card" key={`task-${item.id}`}>
                 <EditModal/>
@@ -99,7 +98,7 @@ export class TaskCard extends Component{
                         </div>
                     ): 
                     (
-                    ''
+                    <span></span>
                     )}
                     
                 </CardActions>

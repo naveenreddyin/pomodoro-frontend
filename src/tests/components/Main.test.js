@@ -6,7 +6,6 @@ import {Main} from '../../components/Main'
 import ContainerConnect, {Container} from '../../components/Container';
 
 import configureStore from 'redux-mock-store';
-import { Provider, connect} from 'react-redux';
 
 describe('Main', () => {
     

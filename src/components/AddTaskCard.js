@@ -66,7 +66,6 @@ export class AddTaskCard extends Component{
 
 const mapStateToProps = (state) => {
     return {
-      progressTasks: state.task.progressTasks
     }
   }
   
