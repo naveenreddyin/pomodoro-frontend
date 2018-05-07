@@ -47,99 +47,23 @@ const create = (baseURL = config.API_BASE_URL) => {
   // way at this level.
   //
 
-  const checkIfEmailExists = (email) => api.get('check_if_username_exists/', {email: email})
+  const getTasks = () => api.get('task/', {})
 
-  const getOfferImages = (businessId) => api.get(businessId+'/offer-image/', {})
+  const createTask = (title) => api.post('task/', {'title': title})
+
+  const deleteTask = (taskId) => api.delete('task/'+taskId, {})
+
+  const updateTask = (taskId, title) => api.put('task/'+taskId+'/', {'title': title})
+
+  const updateTaskStarted = (taskId, started) => api.patch('task/'+taskId+'/', {'started': started})
+
+  const updateTaskDone = (taskId, done) => api.patch('task/'+taskId+'/', {'done': done})
+
+  const getPomodoroSettings = () => api.get('pomodoro/', {})
+
+  const updateTaskPomodoroCount = (taskId, count) => api.patch('task/'+taskId+'/', {'count': count})
 
 
-  const locations = () => api.get('locations/')
-
-  const createCustomer = (email, password, name, birthday, mobile, picture) => api.post('customers/',
-    {'user':
-    {'username': email,
-    "email": email,
-    "password": password,
-    "first_name": name},
-    "date_of_birth": birthday,
-    "phone_number": mobile,
-    "picture": picture
-  })
-  const loginAndGetToken = (username, password) => api.post('obtain-auth-token/', 
-    {'username': username, 'password': password})
-
-  const getCustomerDetails = (email, token) => api.get('customer/'+email+'/', {}, {headers: {'Authorization': 'Token '+token}})
-
-  const getAllSalons = (city, latitude, longitude, token) => api.get('salons/'+latitude+'/'+longitude+'/'+city+'/', {},
-    {headers: {'Authorization': 'Token '+token}})
-  const getAllRestaurants = (city, latitude, longitude, token) => api.get('businesses/'+latitude+'/'+longitude+'/'+city+'/', {},
-    {headers: {'Authorization': 'Token '+token}})
-
-  const testApi = () => api.get('', {})
-  const bookAppointmentForDoctor = (doctor_id, customer_name, from_date,
-  to_date, hexColor, bookable) => api.post('appointment/'+doctor_id+'/',
-  {
-    'title': customer_name,
-    'start': from_date,
-    'end': to_date,
-    'bookable': bookable,
-    'hexColor': hexColor
-  }
-  )
-
-  const createPlan = (offer_id, weekday, from_hour, to_hour, price, currency, slot, startDate, stopDate) => api.post(offer_id+'/plans/', {
-    'offer': offer_id,
-    'to_hour': to_hour,
-    'from_hour': from_hour,
-    'currency': currency,
-    'weekday': weekday,
-    'price': price,
-    'slots': slot,
-    'start_date': startDate,
-    'stop_date': stopDate
-  })
-
-  const updatePlan = (offer_id, plan_id, weekday, from_hour, to_hour, price, currency, slot, paused, startDate, stopDate) => api.put(offer_id+'/plans/'+plan_id+"/", {
-    'offer': offer_id,
-    'to_hour': to_hour,
-    'from_hour': from_hour,
-    'currency': currency,
-    'weekday': weekday,
-    'price': price,
-    'slots': slot,
-    'paused': paused,
-    'start_date': startDate,
-    'stop_date': stopDate
-  })
-
-  const getPlans = (offer_id) => api.get(offer_id+"/plans", {})
-
-  const deletePlan = (offer_id, plan_id) => api.delete(offer_id+"/plans/"+plan_id, {})
-
-  const fetchEventsByBusiness = (businessId) => api.get(businessId +'/bookings/', {})
-
-  const checkIfBookingIsPossibleByTime = (date, time) => api.get('book_appointment_for_customer/'+date+" "+time)
-
-  const categories = () => api.get('categories/')
-
-  const getOffers = (city) => api.get('search/'+city)
-
-  const createOffer = (title, subtext, image, businessId) => api.post(businessId+'/offer/', {
-    'title': title,
-    'subtext': subtext,
-    'image': image,
-    'business': businessId
-  })
-
-  const getOffersByBusinessId = (businessId) => api.get(businessId+'/offer')
-
-  const deleteOfferByBusinessId = (businessId, offerId) => api.delete(businessId+'/offer/'+offerId)
-
-  const updateOfferByBusinessId = (title, subtext, image, businessId, offerId) => api.put(businessId+'/offer/'+offerId, {
-    'title': title,
-    'subtext': subtext,
-    'image': image,
-    'business': businessId
-  })
   // ------
   // STEP 3
   // ------
@@ -155,27 +79,14 @@ const create = (baseURL = config.API_BASE_URL) => {
   return {
     // a list of the API functions from step 2
     // getCity
-    checkIfEmailExists,
-    createCustomer,
-    loginAndGetToken,
-    getCustomerDetails,
-    getAllRestaurants,
-    testApi,
-    bookAppointmentForDoctor,
-    fetchEventsByBusiness,
-    checkIfBookingIsPossibleByTime,
-    locations,
-    categories,
-    createPlan,
-    getPlans,
-    deletePlan,
-    updatePlan,
-    getOffers,
-    createOffer,
-    getOffersByBusinessId,
-    deleteOfferByBusinessId,
-    updateOfferByBusinessId,
-    getOfferImages
+    getTasks,
+    createTask,
+    deleteTask,
+    updateTask,
+    updateTaskStarted,
+    updateTaskDone,
+    getPomodoroSettings,
+    updateTaskPomodoroCount,
   }
 }
 

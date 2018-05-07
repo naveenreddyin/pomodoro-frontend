@@ -2,9 +2,9 @@
 var apiBaseUrlString = ''
 
 const path = window.location.origin
-console.log(window.location)
+// console.log(window.location)
 
-var urlFirstPart = path;
+var urlFirstPart = "http://localhost:8000";
 var urlSecondPart = "/api/";
 apiBaseUrlString = urlFirstPart+urlSecondPart;
 

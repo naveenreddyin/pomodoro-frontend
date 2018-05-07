@@ -4,7 +4,6 @@ import { createLogger } from 'redux-logger'
 import Config from '../config/DebugSettings'
 import createSagaMiddleware from 'redux-saga'
 import * as R from 'ramda';
-import { routerMiddleware } from 'react-router-redux'
 
 
 

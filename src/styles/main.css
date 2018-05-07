@@ -1,0 +1,25 @@
+.task-list-view{
+    max-height: 200;
+    overflow: auto;
+}
+
+/* .MuiPaper-root-91{
+    background-color: #4FC3F7 !important;
+} */
+
+.task-list-item{
+    background-color: azure !important;
+}
+
+.task-card{
+    min-width: 275px;
+}
+
+.add-task{
+    margin-left: 100px;
+}
+
+.pomodoro-image{
+    width:20px;
+    height: 20px;
+}

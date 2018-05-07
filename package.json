@@ -5,10 +5,13 @@
   "dependencies": {
     "apisauce": "^0.14.3",
     "material-ui": "^1.0.0-beta.44",
+    "moment": "^2.22.1",
     "ramda": "^0.25.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-material-modal": "^0.0.2",
     "react-redux": "^5.0.7",
+    "react-responsive-modal": "^3.0.0",
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.2",
@@ -24,5 +27,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "redux-mock-store": "^1.5.1"
   }
 }
