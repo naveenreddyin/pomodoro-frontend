@@ -47,6 +47,7 @@ yarn build
 
 ## Comments
 
+* This task could be acessed via production: https://pomodoro-frontend.herokuapp.com/
 * This project depends on the backend server which is for api purposes. 
 * This project doesnt store anything, only backend does that. 
 * At the moment only one task could be started with Pomodoro but could be altered later on to do background counter.
