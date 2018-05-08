@@ -90,13 +90,11 @@ export class Pomodoro extends Component{
     checkCount(){
         let {count, breakTime} = this.state
         let {settings} = this.props
-        console.log(count, breakTime)
 
         if((count % 4) === 0)
             breakTime = (settings.big_break_timer * 60)
         else
             breakTime = (settings.break_timer * 60)
-        console.log(count, breakTime)
         this.setState({breakTime})
     }
 
@@ -118,9 +116,9 @@ export class Pomodoro extends Component{
         let {task, count, activateBreak} = this.state
         
         return (
-            <div>
+            <div className="pomodoro-block">
                 {activateBreak ? (
-                    <div>
+                    <div className="start-break-block">
                         <p>Now its Break time! </p>
                         <p>Task name: {task.title}</p>
                             {Array(count).fill().map((_, i) => (
@@ -133,7 +131,7 @@ export class Pomodoro extends Component{
                         <p><small><b>*</b>If you close, the timer will stop.</small></p>
                     </div>
                 ) : (
-                    <div>
+                    <div className="start-pomodoro-block">
                         <p>Task name: {task.title}</p>
                             {Array(count).fill().map((_, i) => (
                                 <Tooltip id="tooltip-icon" title="Finished Pomodoro's" key={`tooltip-pomodoro-${task.id}-${i}`}>
