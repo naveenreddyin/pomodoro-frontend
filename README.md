@@ -31,6 +31,7 @@ yarn start
 ```
 
 * This also means you have setup the backend on localhost, or setup a proxy. You can change api url in config/ApiConfig.js
+* Production backend runs on https://pomodorobackend.herokuapp.com/api/
 
 ### `Run tests`
 
